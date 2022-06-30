@@ -1,12 +1,29 @@
+import { useState } from "react"
 import React from 'react'
+import { register } from "../../firebase";
+
+
 
 const Register = () => {
+
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const user = await register(email,password)
+    console.log(user);
+  }
+
   return (
+
     <div className='flex flex-col items-center h-page w-full bg-brown'>
       <div className='h-page pt-48'>
         <div className="block p-6 rounded-lg shadow-lg bg-primary max-w-md mx-auto text-black">
           <h1 className="text-3xl font-semibold text-center text-text-color">REGISTER</h1>
-          <form className='mt-10'>
+          <form className='mt-10' onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <div className="form-group mb-6">
                 <input type="text" className="form-control
@@ -23,8 +40,8 @@ const Register = () => {
                   transition
                   ease-in-out
                   m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-                  aria-describedby="emailHelp123" placeholder="First name" />
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                   placeholder="First name" required value={firstName} onChange={e => setFirstName(e.target.value)} />
               </div>
               <div className="form-group mb-6">
                 <input type="text" className="form-control
@@ -41,8 +58,7 @@ const Register = () => {
                   transition
                   ease-in-out
                   m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124"
-                  aria-describedby="emailHelp124" placeholder="Last name" />
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Last name" required value={lastName} onChange={e => setLastName(e.target.value)} />
               </div>
             </div>
             <div className="form-group mb-6">
@@ -58,8 +74,8 @@ const Register = () => {
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
-                placeholder="Email address" />
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required
+                placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="form-group mb-6">
               <input type="password" className="form-control block
@@ -75,7 +91,7 @@ const Register = () => {
                 ease-in-out
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126"
-                placeholder="Password" />
+                placeholder="Password" required value={password} onChange={e => setPassword(e.target.value)}/>
             </div>
             <button type="submit" className="
               w-full
@@ -94,7 +110,7 @@ const Register = () => {
               active:bg-blue-800 active:shadow-lg
               transition
               duration-150
-              ease-in-out">Sign up</button>
+              ease-in-out disabled:opacity-40" disabled={!email || !password}>Sign up</button>
           </form>
         </div>        
       </div>

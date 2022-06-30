@@ -4,10 +4,14 @@ import Header from '../Header';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import { Provider } from 'react-redux';
+import store from '../../store';
+
 
 const AppRouter = () => {
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
         <Routes>
             <Route path="/" element={<Header />}>
                 <Route index element={<Home />} />
@@ -15,7 +19,9 @@ const AppRouter = () => {
                 <Route path="login" element={<Login />} />
             </Route>
         </Routes>      
-    </Router>
+      </Router>
+    </Provider>
+
   )
 }
 
