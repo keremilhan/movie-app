@@ -3,7 +3,7 @@ import LoginForm from '../LoginForm'
 
 const Login = () => {
   return (
-    <div className='bg-primary h-page'>
+    <div className='bg-primary'>
       <LoginForm />
     </div>
   )

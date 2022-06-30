@@ -19,7 +19,7 @@ const Register = () => {
 
   return (
 
-    <div className='flex flex-col items-center h-page w-full bg-brown'>
+    <div className='flex flex-col items-center h-auto w-full bg-brown'>
       <div className='h-page pt-48'>
         <div className="block p-6 rounded-lg shadow-lg bg-primary max-w-md mx-auto text-black">
           <h1 className="text-3xl font-semibold text-center text-text-color">REGISTER</h1>

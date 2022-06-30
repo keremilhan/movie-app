@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import {Outlet, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import { login } from '../firebase';
 import { useDispatch } from "react-redux/es/exports";
 import { useNavigate } from 'react-router-dom';
-import { login as handleLogin, logout } from "../store/auth";
+import { login as handleLogin } from "../store/auth";
 import { logout as handleLogout } from '../store/auth';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
