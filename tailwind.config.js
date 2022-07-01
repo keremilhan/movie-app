@@ -21,10 +21,6 @@ module.exports = {
       // => @media (max-width: 639px) { ... }
     },
     colors:{
-      // "primary": "#F49431",
-      // "secondary": "#0F92B5",
-      // "text-color" : "#FFEACE",
-      // "brown" : "#8F7158"
       "primary": "#344A53",
       "secondary" : "#2D6F76",
       "text-color" : "#FFEACE",

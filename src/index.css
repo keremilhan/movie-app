@@ -7,3 +7,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  overflow-y: scroll;
+  min-height: fit-content;
+  height: 100vh;
+  background-color: #8F7158;
+}

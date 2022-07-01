@@ -20,13 +20,13 @@ const Register = () => {
   return (
 
     <div className='flex flex-col items-center h-auto w-full bg-brown'>
-      <div className='h-page pt-48'>
+      <div className='pt-48'>
         <div className="block p-6 rounded-lg shadow-lg bg-primary max-w-md mx-auto text-black">
           <h1 className="text-3xl font-semibold text-center text-text-color">REGISTER</h1>
           <form className='mt-10' onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <div className="form-group mb-6">
-                <input type="text" className="form-control
+                <input autoFocus type="text" className="form-control
                   block
                   w-full
                   px-3
