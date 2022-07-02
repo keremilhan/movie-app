@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app'
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth' 
 import toast from "react-hot-toast"
 
+
 export const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
